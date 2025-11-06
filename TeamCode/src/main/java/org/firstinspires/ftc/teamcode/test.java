@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 @Disabled
 //Makes this code file not run when initiated!
 @TeleOp
+@
 public class test extends OpMode {
     @Override
     public void init() {
