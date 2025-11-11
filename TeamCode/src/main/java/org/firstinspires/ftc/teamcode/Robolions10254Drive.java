@@ -1,34 +1,34 @@
 package org.firstinspires.ftc.teamcode;
 
+
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 @TeleOp (name = "Drive")
-public class Robolions10254Drive extends OpMode
-{
+public class Robolions10254Drive extends OpMode {
     DcMotor Front_Left;
     DcMotor Front_Right;
     DcMotor Back_Left;
     DcMotor Back_Right;
 
     int time;
+
     @Override
-    public void init()
-    {
+    public void init() {
         Front_Left = hardwareMap.dcMotor.get("Front Left");
         Front_Right = hardwareMap.dcMotor.get("Front Right");
         Back_Left = hardwareMap.dcMotor.get("Back Left");
         Back_Right = hardwareMap.dcMotor.get("Back Right");
 
-        telemetry.addData("Status" , "Ready to run!");
+        telemetry.addData("Status", "Ready to run!");
         telemetry.update();
 
     }
+
     @Override
-    public void loop()
-    {
+    public void loop() {
         Front_Right.setDirection(DcMotorSimple.Direction.REVERSE);
         Front_Left.setDirection(DcMotorSimple.Direction.FORWARD);
         Back_Right.setDirection(DcMotorSimple.Direction.REVERSE);
@@ -40,20 +40,16 @@ public class Robolions10254Drive extends OpMode
         Back_Left.setPower(gamepad1.left_stick_y);
 
 
-
-        if (gamepad1.right_trigger>0)
-        {
-        Front_Right.setPower(0.5);
-        Front_Left.setPower(-0.5);
-        Back_Right.setPower(-0.5);
-        Back_Left.setPower(0.5);
-        }
-        else if (gamepad1.left_trigger>0)
-        {
-        Front_Right.setPower(-0.5);
-        Front_Left.setPower(0.5);
-        Back_Right.setPower(0.5);
-        Back_Left.setPower(-0.5);
+        if (gamepad1.right_trigger > 0) {
+            Front_Right.setPower(0.5);
+            Front_Left.setPower(-0.5);
+            Back_Right.setPower(-0.5);
+            Back_Left.setPower(0.5);
+        } else if (gamepad1.left_trigger > 0) {
+            Front_Right.setPower(-0.5);
+            Front_Left.setPower(0.5);
+            Back_Right.setPower(0.5);
+            Back_Left.setPower(-0.5);
         }
 
 
